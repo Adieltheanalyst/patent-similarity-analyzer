@@ -4,10 +4,10 @@ numpy
 seaborn
 matplotlib
 pymupdf
-spacy
 en-core-web-sm
 nltk
 wordcloud
+spacy==3.11
 transformers==4.36.2
 sentence-transformers
 torch

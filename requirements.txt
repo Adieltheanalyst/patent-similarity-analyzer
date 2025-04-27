@@ -1,0 +1,15 @@
+pandas
+numpy
+seaborn
+matplotlib
+PyMuPDF
+spacy
+nltk
+streamlit
+wordcloud
+transformers
+sentence-transformers
+torch
+langchain-huggingface
+scikit-learn
+fitz

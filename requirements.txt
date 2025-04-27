@@ -5,6 +5,7 @@ seaborn
 matplotlib
 pymupdf
 spacy
+en-core-web-sm
 nltk
 wordcloud
 transformers==4.36.2

@@ -17,12 +17,18 @@ import nltk
 from collections import Counter
 from nltk.util import bigrams
 nltk.download('stopwords')
-nlp_spacy = spacy.load("en_core_web_sm")
+# nlp_spacy = spacy.load("en_core_web_sm")
 from sklearn.feature_extraction.text import TfidfVectorizer
 from transformers import pipeline, AutoTokenizer
 from sentence_transformers import SentenceTransformer, util
 from sklearn.metrics.pairwise import cosine_similarity
 
+
+try:
+    nlp_spacy = spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+    nlp_spacy = spacy.load("en_core_web_sm")
 
 # """### Data collection and Preparation"""
 

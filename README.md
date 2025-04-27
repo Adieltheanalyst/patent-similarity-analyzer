@@ -10,7 +10,6 @@ Text Preprocessing: Cleans and preprocesses the extracted text by removing unwan
 Domain-Specific Token Filtering: Removes stopwords while retaining domain-specific terms.
 
 Exploratory Data Analysis (EDA):
-
 Word frequency analysis
 
 Word cloud generation
@@ -20,7 +19,6 @@ Word frequency plots
 Bigram co-occurrence analysis
 
 Similarity Analysis:
-
 TF-IDF similarity
 
 Jaccard similarity
@@ -121,5 +119,4 @@ Similarity Analysis: BERT and TF-IDF for different similarity metrics
 
 License
 This project is licensed under the MIT License.
-
 

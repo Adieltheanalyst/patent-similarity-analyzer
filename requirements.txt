@@ -9,7 +9,7 @@ nltk
 wordcloud
 transformers==4.36.2
 sentence-transformers
-torch==2.1.0
+torch
 langchain
 huggingface_hub
 scikit-learn

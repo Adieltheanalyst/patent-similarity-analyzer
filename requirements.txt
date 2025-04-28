@@ -3,7 +3,8 @@ pandas
 numpy
 seaborn
 matplotlib
-pymupdf
+fitz
+PyMuPDF 
 nltk
 wordcloud
 spacy

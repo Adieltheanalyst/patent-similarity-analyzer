@@ -21,7 +21,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from transformers import pipeline, AutoTokenizer
 from sentence_transformers import SentenceTransformer, util
 from sklearn.metrics.pairwise import cosine_similarity
-nlp_spacy = spacy.load("en_core_web_sm")
+
+@st.cache_resource
+def load_spacy_model():
+    return spacy.load("en_core_web_sm")
+
+nlp_spacy = load_spacy_model()
+
 # """### Data collection and Preparation"""
 
 def extraction_from_pdf(path):

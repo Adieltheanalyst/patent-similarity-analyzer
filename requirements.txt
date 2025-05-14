@@ -6,8 +6,8 @@ matplotlib
 PyMuPDF 
 nltk
 wordcloud
-spacy>=3.6.0
-thinc>=8.1.0
+spacy == 3.8.0
+thinc==8.1.0
 transformers==4.36.2
 sentence-transformers
 torch

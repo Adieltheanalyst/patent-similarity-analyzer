@@ -3,7 +3,6 @@ pandas
 numpy
 seaborn
 matplotlib
-fitz
 PyMuPDF 
 nltk
 wordcloud

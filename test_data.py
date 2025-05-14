@@ -16,17 +16,20 @@ from nltk.corpus import stopwords
 import nltk
 from collections import Counter
 from nltk.util import bigrams
-nltk.download('stopwords')
 from sklearn.feature_extraction.text import TfidfVectorizer
 from transformers import pipeline, AutoTokenizer
 from sentence_transformers import SentenceTransformer, util
 from sklearn.metrics.pairwise import cosine_similarity
 
-@st.cache_resource
-def load_spacy_model():
-    return spacy.load("en_core_web_sm")
+nltk.download('stopwords')
+spacy.cli.download("en_core_web_sm")
+nlp_spacy=spacy.load("en_core_web_sm")
 
-nlp_spacy = load_spacy_model()
+# @st.cache_resource
+# def load_spacy_model():
+#     return spacy.load("en_core_web_sm")
+
+# nlp_spacy = load_spacy_model()
 
 # """### Data collection and Preparation"""
 

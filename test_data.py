@@ -22,6 +22,7 @@ from sentence_transformers import SentenceTransformer, util
 from sklearn.metrics.pairwise import cosine_similarity
 
 nltk.download('stopwords')
+
 spacy.cli.download("en_core_web_sm")
 nlp_spacy=spacy.load("en_core_web_sm")
 

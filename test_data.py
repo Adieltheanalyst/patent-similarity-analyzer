@@ -20,6 +20,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from transformers import pipeline, AutoTokenizer
 from sentence_transformers import SentenceTransformer, util
 from sklearn.metrics.pairwise import cosine_similarity
+import pdfplumber
+import pytesseract
+from PIL import Image
 
 nltk.download('stopwords')
 
@@ -35,16 +38,19 @@ nlp_spacy=spacy.load("en_core_web_sm")
 # """### Data collection and Preparation"""
 
 def extraction_from_pdf(path):
-  doc=fitz.open(path)
-  content= ""
-  for page in doc:
-    blocks= page.get_text("blocks")
-    for block in blocks:
-      if block[6]==0:
-        content += block[4] +"\n"
-    # content.strip()
-  content=content.strip()
-  return content
+
+
+def extraction_from_pdf(path):
+    content = ""
+
+    with pdfplumber.open(path) as pdf:
+        for page_num, page in enumerate(pdf.pages, start=1):
+            text = page.extract_text()
+            if not text:  # Fallback to OCR
+                img = page.to_image(resolution=300).original
+                text = pytesseract.image_to_string(img)
+            content += f"\nPage {page_num}:\n{text}"
+      return content
 
 
 def text_preprocessing(content):
@@ -320,3 +326,4 @@ if uploaded_files:
       file_name=f"{selected_pdf2}_summary.txt",
       mime="text/plain"
     )
+
